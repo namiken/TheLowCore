@@ -4,7 +4,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import jp.thelow.core.common.holder.SpecificValue;
-import jp.thelow.core.item.constant.ItemCategory;
 
 public interface TheLowItem {
 
@@ -16,18 +15,26 @@ public interface TheLowItem {
   String getItemId();
 
   /**
-   * SpecificValueを取得する。
+   * アイテム名を取得する。
+   *
+   * @return アイテム名
+   */
+  String getName();
+
+  /**
+   * デフォルトのSpecificValueを取得する。
    *
    * @return SpecificValue
    */
   SpecificValue getDefaultSpecificValue();
 
   /**
-   * アイテムカテゴリを取得する。
+   * ItemStackに対応するSpecificValueを取得する。
    *
-   * @return アイテムカテゴリ
+   * @param itemStack itemStack
+   * @return SpecificValue
    */
-  ItemCategory getItemCategory();
+  SpecificValue getItemStackSpecificValue(ItemStack itemStack);
 
   /**
    * 新しいアイテムを作成する。
